@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_02_27_004836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -35,12 +38,13 @@ ActiveRecord::Schema.define(version: 2021_02_27_004836) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "hero_name"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
-    t.string "password_digest"
     t.text "inventory"
-    t.text "history", limit: 2097151
+    t.text "history"
     t.text "known_objects"
     t.text "broken_objects"
     t.text "unique_events"
