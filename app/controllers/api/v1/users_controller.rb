@@ -16,7 +16,6 @@ class Api::V1::UsersController < ApplicationController
 
    def update
       user = User.find(params[:id])
-      binding.pry
       user.update(
          history: params[:history],
          inventory: params[:inventory],
