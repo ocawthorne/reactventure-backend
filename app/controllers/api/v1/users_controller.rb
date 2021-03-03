@@ -16,12 +16,13 @@ class Api::V1::UsersController < ApplicationController
 
    def update
       user = User.find(params[:id])
+      binding.pry
       user.update(
          history: params[:history],
          inventory: params[:inventory],
          known_objects: params[:known_objects],
          broken_objects: params[:broken_objects],
-         unique_events: params[:unique_events].to_json
+         unique_events: params[:unique_events]
       )
       render json: (user.save ? { user: user } : { error: "There was a problem with your save." })
    end
