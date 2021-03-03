@@ -8,6 +8,7 @@
 
 Entity.delete_all
 EntityInteraction.delete_all
+User.delete_all
 
 #! DO NOT MODIFY BELOW HERE - This data is used for the story.
 #! The state in which the entities are initialised are in default state.
