@@ -7,7 +7,20 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
+    origins 'https://reactventure.herokuapp.com/signup'
+  end
+
+  allow do
+    origins 'https://reactventure.herokuapp.com/signin'
+  end
+
+  allow do
     origins 'https://reactventure.herokuapp.com/'
+  end
+
+  allow do
+    origins 'https://reactventure.herokuapp.com/about'
+  end
 
     resource '*',
       headers: :any,
