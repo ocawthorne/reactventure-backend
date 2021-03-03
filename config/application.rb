@@ -24,6 +24,11 @@ module Backend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'http://reactventure.herokuapp.com',
+    'Access-Control-Request-Method' => %w{GET POST PUT PATCH DELETE OPTIONS HEAD}.join(",")
+  }
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
