@@ -25,7 +25,7 @@ module Backend
     config.load_defaults 6.1
 
   config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => 'http://reactventure.herokuapp.com',
+    'Access-Control-Allow-Origin' => 'https://reactventure.herokuapp.com',
     'Access-Control-Request-Method' => %w{GET POST PUT PATCH DELETE OPTIONS HEAD}.join(",")
   }
 
