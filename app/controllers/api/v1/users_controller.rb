@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
          inventory: params[:inventory],
          known_objects: params[:known_objects],
          broken_objects: params[:broken_objects],
-         unique_events: "{#{"openedChest"}: #{params[:unique_events][:openedChest]}, #{"meltedIce"}: #{params[:unique_events][:meltedIce]}, #{"completedGame"}: #{params[:unique_events][:completedGame]}}"
+         unique_events: params[:unique_events]
       )
       render json: (user.save ? { user: user } : { error: "There was a problem with your save." })
    end

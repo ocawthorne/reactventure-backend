@@ -6,5 +6,5 @@ class User < ApplicationRecord
    serialize :history, Array
    serialize :known_objects, Array
    serialize :broken_objects, Array
-   # serialize :unique_events, Hash
+   serialize :unique_events
 end
